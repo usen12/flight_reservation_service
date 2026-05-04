@@ -8,13 +8,13 @@ A RESTful Spring Boot API for managing airline flight bookings — customers can
 
 | Layer | Technology | Version |
 |-------|------------|---------|
-| Framework | Spring Boot | 3.4.13 |
+| Framework | Spring Boot | 4.0.6 |
 | Language | Java | 21 (LTS) |
 | Database | PostgreSQL | 15+ |
 | Schema migrations | Flyway | (managed by Spring Boot BOM) |
 | ORM | Spring Data JPA / Hibernate | (managed by Spring Boot BOM) |
-| Object mapping | MapStruct | 1.5.5.Final |
-| Boilerplate reduction | Lombok | 1.18.38 |
+| Object mapping | MapStruct | 1.6.3 |
+| Boilerplate reduction | Lombok | 1.18.46 |
 | API documentation | springdoc-openapi (Swagger UI) | 2.8.8 |
 | Observability | Spring Boot Actuator | (managed by Spring Boot BOM) |
 | CVE scanning | OWASP Dependency-Check | 12.1.0 |
@@ -144,7 +144,7 @@ All endpoints are under `/api/v1`. Full interactive documentation is at `http://
 ### 1. Create the database
 
 ```bash
-psql -U postgres -c "CREATE DATABASE flight_reservation_master;"
+psql -U postgres -c "CREATE DATABASE flight_reservation;"
 ```
 
 ### 2. Configure credentials (optional)
@@ -152,7 +152,7 @@ psql -U postgres -c "CREATE DATABASE flight_reservation_master;"
 The application uses environment variables with safe defaults:
 
 ```bash
-export DB_URL=jdbc:postgresql://localhost:5432/flight_reservation_master
+export DB_URL=jdbc:postgresql://localhost:5432/flight_reservation
 export DB_USERNAME=postgres
 export DB_PASSWORD=yourpassword
 ```
